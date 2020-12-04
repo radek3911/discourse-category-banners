@@ -37,13 +37,11 @@ export default createWidget("category-header-widget", {
   html() {
     const path = window.location.pathname;
     var category = this.register
-      .lookup("controller:navigation/category")
-      .get("category");
+      .lookup("controller:tags-show")
+      .get("tag");
 
     if (!category) {
-      var category = this.register
-      .lookup("controller:navigation/category")
-      .get("tag");
+      return
     }
 
     const isException = settings.exceptions
