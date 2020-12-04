@@ -37,8 +37,8 @@ export default createWidget("category-header-widget", {
   html() {
     const path = window.location.pathname;
     var category = this.register
-      .lookup("controller:tags-show")
-      .get("tag");
+      .lookup("controller:navigation/category")
+      .get("category");
 
     if (!category) {
       return
