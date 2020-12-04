@@ -36,12 +36,14 @@ export default createWidget("category-header-widget", {
 
   html() {
     const path = window.location.pathname;
-    const category = this.register
+    var category = this.register
       .lookup("controller:navigation/category")
       .get("category");
 
     if (!category) {
-      return;
+      var category = this.register
+      .lookup("controller:navigation/category")
+      .get("tag");
     }
 
     const isException = settings.exceptions
